@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Intrusion Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Intrusion Detection System</h1>
+        <form method="POST">
+            {% for feature in form.keys() if form %}
+                <label>{{ feature }}:</label>
+                <input type="number" step="any" name="{{ feature }}" value="{{ form.get(feature, '') }}" required>
+            {% endfor %}
+
+            {% if not form %}
+                <!-- Default inputs when page loads for the first time -->
+                <label>Flow Duration:</label>
+                <input type="number" step="any" name="Flow Duration" required>
+                <label>Total Fwd Packets:</label>
+                <input type="number" step="any" name="Total Fwd Packets" required>
+                <label>Total Backward Packets:</label>
+                <input type="number" step="any" name="Total Backward Packets" required>
+                <label>Total Length of Fwd Packets:</label>
+                <input type="number" step="any" name="Total Length of Fwd Packets" required>
+                <label>Total Length of Bwd Packets:</label>
+                <input type="number" step="any" name="Total Length of Bwd Packets" required>
+                <label>Fwd Packet Length Max:</label>
+                <input type="number" step="any" name="Fwd Packet Length Max" required>
+                <label>Fwd Packet Length Min:</label>
+                <input type="number" step="any" name="Fwd Packet Length Min" required>
+                <label>Fwd Packet Length Mean:</label>
+                <input type="number" step="any" name="Fwd Packet Length Mean" required>
+                <label>Bwd Packet Length Mean:</label>
+                <input type="number" step="any" name="Bwd Packet Length Mean" required>
+                <label>Flow Packets/s:</label>
+                <input type="number" step="any" name="Flow Packets/s" required>
+                <label>Flow IAT Mean:</label>
+                <input type="number" step="any" name="Flow IAT Mean" required>
+            {% endif %}
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h2>Predicted: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
