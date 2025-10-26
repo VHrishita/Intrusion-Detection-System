@@ -20,5 +20,5 @@ A machine learning-based IDS that classifies network flows as **Normal** ✅ or 
 - The project is ready to run with the included dataset.  
 - Enter the flow features in the web UI to get predictions instantly.  
 
-**Author:** Vempali Hrishita ✨  
-All rights reserved. ⚖️
+**Author:** Vempali Hrishita 
+All rights reserved. 
