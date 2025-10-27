@@ -75,10 +75,10 @@ You can enter similar values in the Flask web form to test the prediction.
 ## 📸 Screenshots
 
 ### ✅ Normal Detection Example
-![Normal Prediction](![IDS_1](https://github.com/user-attachments/assets/f408b7c7-6b46-41ee-8b3a-90ee7e6bd52e))
+![Normal Prediction](images/IDS_1.jpg)
 
 ### ⚠️ Attack Detection Example
-![Attack Prediction](![IDS_2](https://github.com/user-attachments/assets/ec61d81c-d2d5-4e97-ae7b-716d1a8f3dc5))
+![Attack Prediction](images/IDS_2.jpg)
 
 
 ## 📁 Project Structure
