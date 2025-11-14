@@ -15,7 +15,7 @@ _, features = load_flows_csv("data/demo_flows.csv")
 @app.route("/", methods=["GET", "POST"])
 def index():
     prediction = ""
-    form_values = {}  # store submitted values
+    form_values = {}  
 
     if request.method == "POST":
         try:
