@@ -27,7 +27,6 @@ def index():
             df.fillna(0, inplace=True)
             df = df.clip(upper=1e6, lower=-1e6)
 
-            
             pred = model.predict(df)[0]
             prediction = " 🚨 Attack" if pred else "✅ Normal"
 
