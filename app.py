@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 model = joblib.load("model_rf.pkl")
 
-# Load features from dataset to keep consistent order
+
 _, features = load_flows_csv("data/demo_flows.csv")
 
 @app.route("/", methods=["GET", "POST"])
