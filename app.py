@@ -23,7 +23,7 @@ def index():
             form_values = {f: request.form[f] for f in features}
             input_data = {f: [float(request.form[f])] for f in features}
 
-            # Convert to DataFrame
+            
             df = pd.DataFrame(input_data)
             df.replace([np.inf, -np.inf], np.nan, inplace=True)
             df.fillna(0, inplace=True)
