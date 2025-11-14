@@ -30,10 +30,12 @@ def index():
             df = df.clip(upper=1e6, lower=-1e6)
 
             # Predict
+            
             pred = model.predict(df)[0]
             prediction = " 🚨 Attack" if pred else "✅ Normal"
 
         except Exception as e:
+            
             prediction = f"Error: {e}"
 
     return render_template("index.html", prediction=prediction, form=form_values)
