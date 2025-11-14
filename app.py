@@ -20,19 +20,15 @@ def index():
             
             form_values = {f: request.form[f] for f in features}
             input_data = {f: [float(request.form[f])] for f in features}
-            
             df = pd.DataFrame(input_data)
             df.replace([np.inf, -np.inf], np.nan, inplace=True)
             df.fillna(0, inplace=True)
             df = df.clip(upper=1e6, lower=-1e6)
-
             pred = model.predict(df)[0]
             prediction = " 🚨 Attack" if pred else "✅ Normal"
 
         except Exception as e:
-            
             prediction = f"Error: {e}"
-
     return render_template("index.html", prediction=prediction, form=form_values)
 
 if __name__ == "__main__":
