@@ -6,7 +6,6 @@ from utils import load_flows_csv
 
 app = Flask(__name__)
 
-
 model = joblib.load("model_rf.pkl")
 
 
