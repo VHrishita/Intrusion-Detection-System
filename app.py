@@ -40,5 +40,4 @@ def index():
     return render_template("index.html", prediction=prediction, form=form_values)
 
 if __name__ == "__main__":
-    # Use host='0.0.0.0' to access from other devices on the same network if needed
     app.run(debug=True, port=5000)
