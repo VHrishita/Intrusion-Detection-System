@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 model = joblib.load("model_rf.pkl")
 
-
 _, features = load_flows_csv("data/demo_flows.csv")
 
 @app.route("/", methods=["GET", "POST"])
