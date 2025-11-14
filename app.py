@@ -19,7 +19,7 @@ def index():
 
     if request.method == "POST":
         try:
-            # Collect input from form
+            
             form_values = {f: request.form[f] for f in features}
             input_data = {f: [float(request.form[f])] for f in features}
 
