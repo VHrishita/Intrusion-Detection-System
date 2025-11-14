@@ -6,7 +6,7 @@ from utils import load_flows_csv
 
 app = Flask(__name__)
 
-# Load the trained model
+
 model = joblib.load("model_rf.pkl")
 
 # Load features from dataset to keep consistent order
