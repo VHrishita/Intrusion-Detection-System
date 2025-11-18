@@ -12,22 +12,18 @@ df.columns = df.columns.str.strip()
 if "Label" not in df.columns:
     raise ValueError("⚠️ No 'Label' column found in dataset!")
 
-# ✅ Convert Label to binary (if not already 0/1)
 df["Label"] = df["Label"].replace({"BENIGN": 0, "Benign": 0, "Normal": 0})
 df["Label"] = df["Label"].apply(lambda x: 1 if str(x).upper() != "0" and str(x).upper() != "BENIGN" else 0)
 
 print(df["Label"].value_counts())
 
-# ✅ Select numeric columns for training
 X = df.select_dtypes(include=["number"]).drop(columns=["Label"], errors="ignore")
 y = df["Label"]
 
 print(f"[TRAIN] Using {X.shape[1]} features")
 
-# ✅ Split dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-# ✅ Train model
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(X_train, y_train)
 
