@@ -2,9 +2,8 @@ import pandas as pd
 
 def load_flows_csv(path):
     df = pd.read_csv(path)
-    df.columns = df.columns.str.strip()  # remove extra spaces
+    df.columns = df.columns.str.strip()
 
-    # Features to use for training
     features = [
         'Flow Duration', 'Total Fwd Packets', 'Total Backward Packets',
         'Total Length of Fwd Packets', 'Total Length of Bwd Packets',
@@ -13,7 +12,6 @@ def load_flows_csv(path):
         'Flow Packets/s', 'Flow IAT Mean'
     ]
 
-    # keep only columns that exist in your csv
     features = [f for f in features if f in df.columns]
 
     if 'Label' not in df.columns:
