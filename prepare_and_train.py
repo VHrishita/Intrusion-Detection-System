@@ -9,7 +9,6 @@ df = pd.read_csv("data/demo_flows.csv", low_memory=False)
 
 df.columns = df.columns.str.strip()
 
-# ✅ Make sure Label column exists
 if "Label" not in df.columns:
     raise ValueError("⚠️ No 'Label' column found in dataset!")
 
