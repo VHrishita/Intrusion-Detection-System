@@ -15,7 +15,6 @@ print(df["Label"].value_counts())
 
 X = df.select_dtypes(include=["number"]).drop(columns=["Label"], errors="ignore")
 
-# Predict one random row
 sample = X.sample(1, random_state=42)
 prediction = model.predict(sample)[0]
 
