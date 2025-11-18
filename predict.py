@@ -10,7 +10,6 @@ df.columns = df.columns.str.strip()
 df["Label"] = df["Label"].replace({"BENIGN": 0, "Benign": 0, "Normal": 0})
 df["Label"] = df["Label"].apply(lambda x: 1 if str(x).upper() != "0" and str(x).upper() != "BENIGN" else 0)
 
-# Show label distribution
 print("Label counts:")
 print(df["Label"].value_counts())
 
