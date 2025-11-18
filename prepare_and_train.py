@@ -27,10 +27,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(X_train, y_train)
 
-# ✅ Save model
 joblib.dump(clf, "model_rf.pkl")
 print("✅ Model trained and saved as model_rf.pkl")
 
-# ✅ Evaluate quick accuracy
 acc = clf.score(X_test, y_test)
 print(f"[TRAIN] Accuracy: {acc:.4f}")
